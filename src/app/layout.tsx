@@ -43,6 +43,10 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} h-full antialiased`}
     >
+      <head>
+          <link rel="apple-touch-icon" href="/PicsiDrop/User.png" />
+          <link rel="shortcut icon" href="/PicsiDrop/User.png" />
+      </head>
       <body className="min-h-full flex flex-col font-sans">{children}</body>
     </html>
   );
