@@ -251,8 +251,9 @@ const PartnerLoginPage = () => {
       <div className="flex w-full items-start justify-center lg:w-[35%] relative pt-12 px-6">
         <div className="relative w-full max-w-[400px] bg-white p-8 border border-gray-100 rounded-none shadow-[0_2px_15px_-3px_rgba(0,0,0,0.02)]">
           
-          {/* Logo - Simple Picsi Drop Text */}
-          <div className="mb-10 flex justify-center">
+          {/* Logo */}
+          <div className="mb-10 flex flex-col items-center">
+            <img src="/PicsiDrop/Partner.png" alt="PicsiDrop" className="w-12 h-12 rounded-none mb-3" />
             <div className="flex items-center">
               <span className="text-3xl font-light tracking-tight text-black">
                 Picsi<span className="font-semibold ml-1">Drop</span>
@@ -269,7 +270,7 @@ const PartnerLoginPage = () => {
               {isSignIn ? 'Partner Sign In' : 'Partner Sign Up'}
             </h1>
             <p className="mt-2 text-sm text-gray-600 font-normal border-b border-gray-50 pb-4">
-              {isSignIn ? 'Enter your credentials to access your partner portal.' : 'Partner with us to optimize your logistics.'}
+              {isSignIn ? 'Sign in to access your delivery dashboard.' : 'Register to start delivering packages.'}
             </p>
           </div>
 
@@ -290,7 +291,7 @@ const PartnerLoginPage = () => {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   className="w-full border border-gray-200 p-3.5 focus:border-black outline-none transition-all rounded-none text-base font-normal text-black bg-white"
-                  placeholder="John Doe"
+                  placeholder="Your Name"
                 />
               </div>
             )}
@@ -373,7 +374,7 @@ const PartnerLoginPage = () => {
             </div>
 
             <div className="space-y-1">
-              <label className="text-[10px] uppercase font-bold text-gray-500 tracking-widest block pl-1">Master Password</label>
+              <label className="text-[10px] uppercase font-bold text-gray-500 tracking-widest block pl-1">Password</label>
               <input
                 type="password"
                 value={password}
@@ -448,8 +449,8 @@ const PartnerLoginPage = () => {
           <div className="max-w-2xl">
             <h2 className="text-[44px] font-extralight text-white leading-[1.1] tracking-tight mb-8">
                 {isSignIn 
-                    ? "Welcome back to the global logistics network."
-                    : "Become a partner and achieve your delivery potential."}
+                    ? "Welcome back. Ready for your next trip?"
+                    : "Join the network and start earning today."}
             </h2>
             <div className="h-0.5 w-24 bg-[#D2E32B] mb-8"></div>
             <p className="text-xl font-light text-white/90 uppercase tracking-[0.25em] text-[13px] font-medium">
