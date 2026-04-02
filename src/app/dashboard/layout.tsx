@@ -13,7 +13,7 @@ export default function DashboardLayout({
         
         {/* Branding Area */}
         <div className="p-8 pb-10 flex items-center space-x-3">
-          <img src="/picsidrop/user.png" alt="PicsiDrop" className="w-8 h-8 rounded-full border border-gray-200 shadow-sm" />
+          <img src="/PicsiDrop/User.png" alt="PicsiDrop" className="w-8 h-8 rounded-none border border-gray-200" />
           <Link href="/dashboard" className="flex items-center">
             <span className="text-xl font-light tracking-tight text-gray-900">
               Picsi<span className="font-semibold text-black ml-0.5">Drop</span>

@@ -250,7 +250,7 @@ const LoginPage = () => {
           
           {/* Logo */}
           <div className="mb-10 flex flex-col items-center">
-            <img src="/picsidrop/user.png" alt="PicsiDrop" className="w-12 h-12 rounded-full mb-3" />
+            <img src="/PicsiDrop/User.png" alt="PicsiDrop" className="w-12 h-12 rounded-none mb-3" />
             <div className="flex items-center">
               <span className="text-3xl font-light tracking-tight text-black">
                 Picsi<span className="font-semibold ml-1">Drop</span>

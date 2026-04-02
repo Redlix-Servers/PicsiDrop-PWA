@@ -27,6 +27,10 @@ export const metadata: Metadata = {
     statusBarStyle: "default",
     title: "Picsi Drop",
   },
+  icons: {
+    icon: "/PicsiDrop/User.png",
+    apple: "/PicsiDrop/User.png",
+  },
 };
 
 export default function RootLayout({
