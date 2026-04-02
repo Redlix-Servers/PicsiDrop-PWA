@@ -103,7 +103,7 @@ export default function ParcelFlow({ userId }: { userId: string }) {
       {/* STEP 1: Specs Input */}
       {step === 1 && (
          <div className="bg-white border border-gray-200 shadow-sm p-5 md:p-8 animate-fade-in mx-auto">
-             <h2 className="text-base md:text-lg font-normal mb-6 md:mb-8 border-b border-gray-100 pb-4">Parcel Details</h2>
+             <h2 className="text-lg md:text-xl font-bold mb-6 md:mb-8 border-b-2 border-black pb-4 text-black uppercase tracking-tight">Parcel Details</h2>
              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 <div className="space-y-5 md:space-y-6">
                     <div className="space-y-1.5">
