@@ -243,9 +243,9 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="flex h-screen w-full bg-[#fcfcfc] font-sans overflow-hidden">
+    <div className="flex min-h-screen w-full bg-[#fcfcfc] font-sans">
       {/* Left side - Simple Login/Signup Form */}
-      <div className="flex w-full items-start justify-center lg:w-[35%] relative pt-12 px-6">
+      <div className="flex w-full items-center justify-center lg:w-[35%] relative py-12 px-6 overflow-y-auto">
         <div className="relative w-full max-w-[400px] bg-white p-8 border border-gray-100 rounded-none shadow-[0_2px_15px_-3px_rgba(0,0,0,0.02)]">
           
           {/* Logo */}
