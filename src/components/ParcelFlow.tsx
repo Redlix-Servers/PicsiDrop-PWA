@@ -185,7 +185,7 @@ export default function ParcelFlow({ userId }: { userId: string }) {
                             <span className="text-white text-[8px] md:text-[10px]">RADAR</span>
                          </div>
                      </div>
-                     <h2 className="text-lg md:text-xl font-normal tracking-tight">Scanning Transit Grid</h2>
+                     <h2 className="text-lg md:text-xl font-bold tracking-tight text-black">Scanning Transit Grid</h2>
                      <p className="text-xs md:text-sm text-gray-500 font-normal mt-2 px-4 md:px-0">Computing trajectory overlaps for {pickup} → {drop}</p>
                  </div>
              ) : (
@@ -232,7 +232,7 @@ export default function ParcelFlow({ userId }: { userId: string }) {
              <div className="flex flex-col md:flex-row justify-between items-start mb-8 md:mb-10 border-b border-gray-100 pb-6 gap-4">
                  <div>
                     <span className="text-[9px] md:text-[10px] uppercase font-bold text-black tracking-widest bg-gray-100 px-2 py-1">Active Operation</span>
-                    <h2 className="text-2xl md:text-3xl font-light tracking-tight mt-3">Waiting for Pickup</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold tracking-tight mt-3 text-black">Waiting for Pickup</h2>
                  </div>
                  <div className="md:text-right border-t md:border-t-0 border-gray-50 pt-3 md:pt-0 w-full md:w-auto">
                      <p className="text-[9px] md:text-[10px] uppercase font-bold text-gray-400 tracking-widest">Assigned Partner</p>
@@ -274,7 +274,7 @@ export default function ParcelFlow({ userId }: { userId: string }) {
                 <div className="space-y-6">
                     <div className="bg-black text-white p-6 border border-black shadow-[4px_4px_0px_rgba(200,200,200,1)]">
                         <h3 className="text-[10px] uppercase font-bold tracking-widest text-[#D2E32B] mb-3">Final Destination</h3>
-                        <div className="text-2xl md:text-3xl font-light mb-6 tracking-tight truncate">{drop}</div>
+                        <div className="text-2xl md:text-3xl font-bold mb-6 tracking-tight truncate text-[#D2E32B]">{drop}</div>
                         
                         <h3 className="text-[10px] uppercase font-bold tracking-widest text-gray-400 mb-2">Delivery Handshake</h3>
                         <p className="text-[10px] md:text-sm font-normal text-gray-300 leading-relaxed max-w-full md:max-w-[250px]">
