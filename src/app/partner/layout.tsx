@@ -22,10 +22,6 @@ export default function PartnerLayout({
 }) {
   return (
     <>
-      <head>
-          <link rel="apple-touch-icon" href="/PicsiDrop/Partner.png" />
-          <link rel="shortcut icon" href="/PicsiDrop/Partner.png" />
-      </head>
       {children}
     </>
   );
