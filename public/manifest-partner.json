@@ -1,0 +1,17 @@
+{
+  "name": "PicsiDrop Partner Logistics",
+  "short_name": "Picsi Partner",
+  "description": "Provide logistics services and earn with PicsiDrop.",
+  "start_url": "/partner/login",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/PicsiDrop/Partner.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
