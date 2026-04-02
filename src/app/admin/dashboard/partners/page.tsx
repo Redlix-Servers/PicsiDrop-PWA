@@ -33,7 +33,7 @@ export default async function AdminPartnersPage() {
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-100">
-            {partners.map((partner) => (
+            {partners.map((partner: any) => (
               <tr key={partner.id} className="hover:bg-gray-50 transition-colors group">
                 <td className="p-4 pl-6 text-xs font-mono text-gray-400 group-hover:text-black transition-colors">
                     {partner.id.split('-')[0] || partner.id.slice(0, 8)}...
