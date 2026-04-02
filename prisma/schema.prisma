@@ -1,0 +1,87 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id          String   @id @default(cuid())
+  email       String   @unique
+  password    String
+  name        String?
+  phoneNumber String?  @unique
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  parcels     Parcel[]
+}
+
+model Partner {
+  id                String   @id @default(cuid())
+  email             String   @unique
+  password          String
+  name              String?
+  phoneNumber       String?  @unique
+  
+  // KYC Details
+  aadhaarNumber     String?
+  panNumber         String?
+  aadhaarImageUrl   String?
+  panImageUrl       String?
+  selfieImageUrl    String?
+  
+  // Address Details
+  city              String?
+  state             String?
+  pincode           String?
+  
+  // Travel Logistics
+  routeFrom         String?
+  routeTo           String?
+  travelFrequency   String?
+  travelTime        String?
+  
+  // Earnings & Setup
+  upiId             String?
+  bankAccountNumber String?
+  ifscCode          String?
+  username          String?  @unique
+  kycCompleted      Boolean  @default(false)
+  
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  parcels           Parcel[] @relation("PartnerParcels")
+}
+
+model Parcel {
+  id              String   @id @default(cuid())
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  pickupLocation  String
+  dropLocation    String
+  weight          Float
+  dimensions      String?
+  urgency         String   // Standard, Express, Urgent
+  price           Float
+  paymentMethod   String?  // UPI, Wallet
+  
+  status          String   @default("Searching") // Searching, Accepted, InTransit, Delivered, Completed
+  
+  pickupOTP       String?
+  deliveryOTP     String?
+  rating          Int?
+  
+  // Relations
+  userId          String
+  user            User     @relation(fields: [userId], references: [id])
+  
+  partnerId       String?
+  partner         Partner? @relation("PartnerParcels", fields: [partnerId], references: [id])
+}
