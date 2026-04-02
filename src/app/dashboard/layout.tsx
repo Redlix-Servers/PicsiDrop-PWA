@@ -7,9 +7,9 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex h-screen w-full bg-white font-sans selection:bg-black/5">
-      {/* Sidebar - Grey background */}
-      <aside className="w-64 bg-[#f2f2f2] border-r border-gray-200 flex flex-col h-full z-10 shrink-0">
+    <div className="flex flex-col lg:flex-row h-screen w-full bg-white font-sans selection:bg-black/5 overflow-hidden">
+      {/* Sidebar - Hidden on mobile, flex on desktop */}
+      <aside className="hidden lg:flex w-64 bg-[#f2f2f2] border-r border-gray-200 flex-col h-full z-10 shrink-0">
         
         {/* Branding Area */}
         <div className="p-8 pb-10 flex items-center space-x-3">
@@ -47,28 +47,28 @@ export default function DashboardLayout({
       <main className="flex-1 flex flex-col min-w-0 overflow-hidden">
         
         {/* Top Header - Black, Normal Font, Log Out on Right */}
-        <header className="h-14 bg-black flex items-center justify-between px-10 shrink-0 z-20">
-            <div className="flex items-center space-x-3">
-                 <div className="w-2 h-2 bg-white rounded-none"></div>
-                 <h2 className="text-sm font-light text-white tracking-tight">User Dashboard Overview</h2>
+        <header className="h-14 bg-black flex items-center justify-between px-4 md:px-10 shrink-0 z-20">
+            <div className="flex items-center space-x-2 md:space-x-3">
+                 <div className="hidden md:block w-2 h-2 bg-white rounded-none"></div>
+                 <h2 className="text-[11px] md:text-sm font-light text-white tracking-tight uppercase md:normal-case">Dashboard</h2>
             </div>
             
             {/* Header Right Actions */}
-            <div className="flex items-center space-x-8">
+            <div className="flex items-center space-x-3 md:space-x-8">
                 <Link 
                   href="/login" 
-                  className="text-xs font-normal text-white/70 hover:text-white transition-all border border-white/20 px-4 py-1.5 hover:bg-white/10 rounded-none transform active:scale-95"
+                  className="text-[10px] md:text-xs font-normal text-white/70 hover:text-white transition-all border border-white/20 px-3 md:px-4 py-1 md:py-1.5 hover:bg-white/10 rounded-none transform active:scale-95"
                 >
                   Log Out
                 </Link>
                 
                 {/* Minimal User Avatar Placeholder */}
-                <div className="w-7 h-7 bg-white/20 border border-white/30 rounded-none"></div>
+                <div className="w-6 h-6 md:w-7 md:h-7 bg-white/20 border border-white/30 rounded-none"></div>
             </div>
         </header>
 
         {/* Content Viewport */}
-        <div className="flex-1 overflow-y-auto p-12 bg-white">
+        <div className="flex-1 overflow-y-auto p-4 md:p-12 bg-white">
           <div className="max-w-6xl mx-auto">
              {children}
           </div>
