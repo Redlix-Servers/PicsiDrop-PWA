@@ -17,49 +17,53 @@ export default async function AdminDisputesPage() {
 
   return (
     <div className="space-y-10 animate-fade-in">
-       <div className="border-b border-gray-300 pb-6 flex items-center justify-between">
+       <div className="border-b border-black pb-8 flex items-center justify-between">
           <div>
-            <h1 className="text-3xl font-light text-black tracking-tight uppercase">Help & Disputes</h1>
-            <p className="text-xs text-gray-500 font-normal mt-2 tracking-widest uppercase">Handling issues like wrong OTP, non-delivery, and other problems.</p>
+            <h1 className="text-4xl font-bold text-black tracking-tight uppercase">Help & Issues</h1>
+            <p className="text-[10px] text-gray-500 font-bold mt-2 tracking-widest uppercase italic-none">Handling wrong OTPs, late deliveries, and other problems.</p>
           </div>
        </div>
 
-       <div className="bg-white border border-gray-200">
+       <div className="bg-white border-2 border-black">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="bg-[#fafafa] border-b border-gray-200">
-                <th className="p-5 text-[10px] uppercase font-bold text-gray-400 tracking-widest pl-8">Issue ID</th>
-                <th className="p-5 text-[10px] uppercase font-bold text-gray-400 tracking-widest">Problem</th>
-                <th className="p-5 text-[10px] uppercase font-bold text-gray-400 tracking-widest">Involved People</th>
-                <th className="p-5 text-[10px] uppercase font-bold text-gray-400 tracking-widest text-right pr-8">Actions</th>
+              <tr className="bg-black text-white">
+                <th className="p-6 text-[10px] uppercase font-bold tracking-widest pl-8">Order ID</th>
+                <th className="p-6 text-[10px] uppercase font-bold tracking-widest">Problem Type</th>
+                <th className="p-6 text-[10px] uppercase font-bold tracking-widest text-center">People Involved</th>
+                <th className="p-6 text-[10px] uppercase font-bold tracking-widest text-right pr-8">Actions</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-100">
                 {potentialDisputes.map((parcel: any) => (
                     <tr key={parcel.id} className="hover:bg-red-50/10 transition-colors">
-                        <td className="p-6 pl-8">
+                        <td className="p-8 pl-8">
                             <span className="text-xs font-mono text-red-500 font-bold">#{parcel.id.slice(0, 5).toUpperCase()}</span>
-                            <p className="text-[10px] text-gray-400 mt-1 uppercase tracking-widest">{new Date(parcel.createdAt).toLocaleDateString()}</p>
+                            <p className="text-[10px] text-gray-400 mt-2 font-bold uppercase tracking-widest">{new Date(parcel.createdAt).toLocaleDateString()}</p>
                         </td>
-                        <td className="p-6">
-                            <p className="text-sm font-medium text-black">
-                                {parcel.rating ? `Low Rating (${parcel.rating}★)` : 'Late Delivery Error'}
+                        <td className="p-8">
+                            <p className="text-base font-bold text-black">
+                                {parcel.rating ? `Low Rating (${parcel.rating}★)` : 'Late Order Error'}
                             </p>
-                            <p className="text-[10px] text-gray-400 mt-1">{parcel.pickupLocation} → {parcel.dropLocation}</p>
-                        </td>
-                        <td className="p-6">
-                            <div className="text-xs space-y-1">
-                                <p className="text-black font-bold">User: <span className="font-normal text-gray-500">{parcel.user.name}</span></p>
-                                <p className="text-black font-bold">Driver: <span className="font-normal text-gray-500">{parcel.partner?.name || 'Searching...'}</span></p>
+                            <div className="flex items-center gap-2 mt-2">
+                                <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">{parcel.pickupLocation}</span>
+                                <span className="text-[9px] font-bold text-gray-200">→</span>
+                                <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">{parcel.dropLocation}</span>
                             </div>
                         </td>
-                        <td className="p-6 text-right pr-8">
+                        <td className="p-8">
+                            <div className="text-[10px] space-y-2 flex flex-col items-center">
+                                <div className="bg-gray-100 px-3 py-1 font-bold text-gray-600 uppercase tracking-widest">User: {parcel.user.name}</div>
+                                <div className="bg-gray-100 px-3 py-1 font-bold text-gray-600 uppercase tracking-widest">Driver: {parcel.partner?.name || 'Searching...'}</div>
+                            </div>
+                        </td>
+                        <td className="p-8 text-right pr-8">
                             <div className="flex items-center justify-end space-x-3">
-                                <button className="px-4 py-2 bg-white border border-gray-200 text-[10px] font-bold uppercase tracking-widest hover:border-black transition-colors">
+                                <button className="px-6 py-3 border-2 border-black bg-white text-black text-[10px] font-bold uppercase tracking-widest hover:bg-black hover:text-white transition-all">
                                     Flag Fraud
                                 </button>
-                                <button className="px-4 py-2 bg-black text-white text-[10px] font-bold uppercase tracking-widest hover:bg-gray-800 transition-colors">
-                                    Refund User
+                                <button className="px-6 py-3 bg-black text-white text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-black border-2 border-black transition-all">
+                                    Send Refund
                                 </button>
                             </div>
                         </td>
@@ -67,7 +71,7 @@ export default async function AdminDisputesPage() {
                 ))}
                 {potentialDisputes.length === 0 && (
                      <tr>
-                        <td colSpan={4} className="p-20 text-center text-sm text-gray-400 italic">No issues detected by the system.</td>
+                        <td colSpan={4} className="p-32 text-center text-[10px] font-bold text-gray-400 uppercase tracking-[0.4em]">Everything is running correctly.</td>
                      </tr>
                 )}
             </tbody>

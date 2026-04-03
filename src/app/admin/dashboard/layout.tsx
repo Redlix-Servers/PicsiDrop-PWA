@@ -14,9 +14,9 @@ export default function AdminDashboardLayout({
         {/* Branding Area */}
         <div className="p-8 pb-10 border-b border-gray-800">
           <Link href="/admin/dashboard" className="flex items-center">
-            <span className="text-xl font-light tracking-tight text-white uppercase italic">
+            <span className="text-xl font-light tracking-tight text-white uppercase">
               Picsi<span className="font-semibold text-white ml-0.5">Drop</span>
-              <span className="ml-2 text-[9px] font-bold text-black bg-white px-1.5 py-0.5 uppercase tracking-widest leading-none not-italic">
+              <span className="ml-2 text-[9px] font-bold text-black bg-[#D2E32B] px-1.5 py-0.5 uppercase tracking-widest leading-none">
                  Admin
               </span>
             </span>

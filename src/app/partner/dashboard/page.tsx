@@ -55,23 +55,23 @@ export default async function PartnerDashboardPage() {
       
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6 relative">
           <div>
-            <h1 className="text-4xl md:text-6xl font-light text-black tracking-tighter leading-none italic uppercase">
-                Hello, <span className="font-bold not-italic">{partnerName}</span>
+            <h1 className="text-4xl md:text-6xl font-light text-black tracking-tighter leading-none uppercase">
+                Hello, <span className="font-bold">{partnerName}</span>
             </h1>
             <div className="mt-6 flex items-center space-x-6">
                 <div className="flex items-center gap-2">
                     <div className={`w-1.5 h-1.5 ${recentPartner.kycCompleted ? 'bg-green-500' : 'bg-red-500'}`}></div>
-                    <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">KYC Status: {recentPartner.kycCompleted ? 'Verified' : 'Pending'}</span>
+                    <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">KYC Status: {recentPartner.kycCompleted ? 'Verified' : 'Pending'}</span>
                 </div>
                 <div className="w-px h-3 bg-gray-200"></div>
                 <div className="flex items-center gap-2">
                     <div className="w-1.5 h-1.5 bg-black"></div>
-                    <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Trust Score: 4.9</span>
+                    <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Trust Score: 4.9</span>
                 </div>
             </div>
           </div>
           
-          <div className="hidden md:block bg-black text-white px-6 py-2 text-[10px] uppercase font-bold tracking-[0.3em] absolute -top-12 right-0 italic opacity-10">
+          <div className="hidden md:block bg-black text-white px-6 py-2 text-[10px] uppercase font-bold tracking-[0.3em] absolute -top-12 right-0 opacity-10">
               TRAVELER_CONSOLE
           </div>
       </div>
@@ -105,7 +105,7 @@ export default async function PartnerDashboardPage() {
                         <div className="bg-[#fcfcfc] border border-gray-100 p-6 grid grid-cols-2 md:grid-cols-3 gap-8 mb-10">
                             <div>
                                 <p className="text-[9px] uppercase font-bold text-gray-400 tracking-widest mb-1">Your Pay</p>
-                                <p className="text-xl font-bold text-black italic">₹{(pendingRequest.price * 0.8).toFixed(2)}</p>
+                                <p className="text-xl font-bold text-black border-b border-black inline-block">₹{(pendingRequest.price * 0.8).toFixed(2)}</p>
                             </div>
                             <div className="border-l border-gray-200 pl-8">
                                 <p className="text-[9px] uppercase font-bold text-gray-400 tracking-widest mb-1">Weight</p>

@@ -61,27 +61,27 @@ export default function PartnerControls({
             </div>
 
             {/* Route Management Section */}
-            <div className="bg-white border-2 border-black p-10 shadow-[12px_12px_0px_rgba(0,0,0,0.05)] relative overflow-hidden">
+            <div className="bg-white border-2 border-black p-10 relative overflow-hidden">
                 <div className="absolute top-0 right-0 bg-black text-white text-[10px] font-bold uppercase tracking-widest px-4 py-2">
                     Route Settings
                 </div>
-                <h3 className="text-sm font-bold text-black uppercase tracking-widest mb-10 border-b border-gray-100 pb-4">Where are you going?</h3>
+                <h3 className="text-sm font-bold text-black uppercase tracking-widest mb-10 border-b border-gray-100 pb-4">Trip Details</h3>
                 
                 <div className="space-y-6">
                     <div className="grid grid-cols-2 gap-4">
                         <div className="space-y-2">
-                            <label className="text-[9px] font-bold text-gray-400 uppercase tracking-widest pl-1">From City</label>
-                            <input type="text" value={from} onChange={(e) => setFrom(e.target.value)} className="w-full border-b border-gray-200 p-2 text-sm font-bold text-black focus:border-black outline-none rounded-none" />
+                            <label className="text-[9px] font-bold text-gray-500 uppercase tracking-widest pl-1">Starting City</label>
+                            <input type="text" value={from} onChange={(e) => setFrom(e.target.value)} className="w-full border-b border-gray-200 p-2 text-sm font-bold text-black focus:border-black outline-none transition-all rounded-none" />
                         </div>
                         <div className="space-y-2">
-                            <label className="text-[9px] font-bold text-gray-400 uppercase tracking-widest pl-1">To City</label>
-                            <input type="text" value={to} onChange={(e) => setTo(e.target.value)} className="w-full border-b border-gray-200 p-2 text-sm font-bold text-black focus:border-black outline-none rounded-none" />
+                            <label className="text-[9px] font-bold text-gray-500 uppercase tracking-widest pl-1">Ending City</label>
+                            <input type="text" value={to} onChange={(e) => setTo(e.target.value)} className="w-full border-b border-gray-200 p-2 text-sm font-bold text-black focus:border-black outline-none transition-all rounded-none" />
                         </div>
                     </div>
 
                     <div className="grid grid-cols-2 gap-4">
                         <div className="space-y-2">
-                            <label className="text-[9px] font-bold text-gray-400 uppercase tracking-widest pl-1">How often?</label>
+                            <label className="text-[9px] font-bold text-gray-400 uppercase tracking-widest pl-1">Frequency</label>
                             <select value={frequency} onChange={(e) => setFrequency(e.target.value)} className="w-full border-b border-gray-200 p-2 text-[10px] font-bold text-black outline-none rounded-none bg-transparent">
                                 <option>One-time</option>
                                 <option>Daily</option>
@@ -89,8 +89,8 @@ export default function PartnerControls({
                             </select>
                         </div>
                         <div className="space-y-2">
-                            <label className="text-[9px] font-bold text-gray-400 uppercase tracking-widest pl-1">Date & Time</label>
-                            <input type="text" value={time} onChange={(e) => setTime(e.target.value)} placeholder="e.g. Monday 10 AM" className="w-full border-b border-gray-200 p-2 text-xs font-bold text-black outline-none rounded-none" />
+                            <label className="text-[9px] font-bold text-gray-400 uppercase tracking-widest pl-1">Time</label>
+                            <input type="text" value={time} onChange={(e) => setTime(e.target.value)} placeholder="09:00 AM" className="w-full border-b border-gray-200 p-2 text-xs font-bold text-black outline-none rounded-none" />
                         </div>
                     </div>
 
@@ -103,9 +103,9 @@ export default function PartnerControls({
                         disabled={isLoading || !from || !to}
                         className="w-full bg-black text-white py-5 text-[11px] font-bold uppercase tracking-[0.25em] hover:bg-gray-800 transition-all"
                     >
-                        {isLoading ? 'Updating...' : 'Save My Route'}
+                        {isLoading ? 'Updating...' : 'Confirm My Route'}
                     </button>
-                    <p className="text-[9px] text-gray-400 font-normal italic text-center mt-4">We will show you delivery requests matching this route.</p>
+                    <p className="text-[9px] text-gray-400 font-bold text-center mt-4">This helps us find parcels for you.</p>
                 </div>
             </div>
         </div>
