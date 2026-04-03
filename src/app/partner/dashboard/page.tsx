@@ -1,5 +1,5 @@
 import React from 'react';
-import { prisma } from "../../../lib/prisma";
+import { prisma } from "@/lib/prisma";
 import PartnerAcceptAction from "./PartnerAcceptAction";
 import ActiveMissionConsole from "./ActiveMissionConsole";
 import PartnerControls from "./PartnerControls";
@@ -31,7 +31,7 @@ export default async function PartnerDashboardPage() {
   const completedParcels = await prisma.parcel.findMany({
       where: { partnerId: recentPartner.id, status: 'Completed' }
   });
-  const totalEarnings = completedParcels.reduce((acc, p) => acc + (p.price * 0.8), 0);
+  const totalEarnings = completedParcels.reduce((acc: number, p: any) => acc + (p.price * 0.8), 0);
 
   // 3. Scan Radar if idle
   let pendingRequest = null;

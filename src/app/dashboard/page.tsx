@@ -1,5 +1,5 @@
 import React from 'react';
-import { prisma } from "../../lib/prisma";
+import { prisma } from "@/lib/prisma";
 import ParcelFlow from "../../components/ParcelFlow";
 
 export default async function DashboardPage() {

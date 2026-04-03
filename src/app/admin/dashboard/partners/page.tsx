@@ -1,5 +1,5 @@
 import React from 'react';
-import { prisma } from "../../../../lib/prisma";
+import { prisma } from "@/lib/prisma";
 
 // Ensure this route is dynamically rendered to always fetch fresh data
 export const dynamic = 'force-dynamic';

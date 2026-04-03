@@ -1,6 +1,6 @@
 "use server";
 
-import { prisma } from "../../lib/prisma";
+import { prisma } from "@/lib/prisma";
 
 export async function calculateParcelPrice(weight: number, urgency: string) {
   let baseRate = 250.00; // Base logistics rate in INR 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { prisma } from "../../lib/prisma";
+import { prisma } from "@/lib/prisma";
 
 export default async function AdminOverviewPage() {
   // Real-time aggregate stats

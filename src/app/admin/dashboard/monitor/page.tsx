@@ -1,5 +1,5 @@
 import React from 'react';
-import { prisma } from "../../../../lib/prisma";
+import { prisma } from "@/lib/prisma";
 import LiveRouteMap from "../../../../components/LiveRouteMap";
 
 export const dynamic = 'force-dynamic';
