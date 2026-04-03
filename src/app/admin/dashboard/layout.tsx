@@ -13,10 +13,10 @@ export default function AdminDashboardLayout({
         
         {/* Branding Area */}
         <div className="p-8 pb-10 border-b border-gray-800">
-          <Link href="/admin/dashboard/users" className="flex items-center">
-            <span className="text-xl font-light tracking-tight text-white">
+          <Link href="/admin/dashboard" className="flex items-center">
+            <span className="text-xl font-light tracking-tight text-white uppercase italic">
               Picsi<span className="font-semibold text-white ml-0.5">Drop</span>
-              <span className="ml-2 text-[9px] font-bold text-black bg-white px-1.5 py-0.5 uppercase tracking-widest leading-none">
+              <span className="ml-2 text-[9px] font-bold text-black bg-white px-1.5 py-0.5 uppercase tracking-widest leading-none not-italic">
                  Admin
               </span>
             </span>
@@ -25,19 +25,47 @@ export default function AdminDashboardLayout({
 
         {/* Primary Navigation */}
         <nav className="flex-1 px-4 py-8 space-y-2">
-          <h3 className="text-[10px] font-bold text-gray-500 uppercase tracking-widest px-4 mb-4">Database Records</h3>
+          <h3 className="text-[10px] font-bold text-gray-500 uppercase tracking-widest px-4 mb-4">Command Center</h3>
           
+          <Link 
+            href="/admin/dashboard" 
+            className="flex items-center px-4 py-3 text-sm font-normal text-gray-300 hover:text-white hover:bg-gray-900 border-l-2 border-transparent hover:border-white transition-all rounded-none group"
+          >
+            <span className="group-hover:translate-x-1 transition-transform">Overview</span>
+          </Link>
+          <Link 
+            href="/admin/dashboard/monitor" 
+            className="flex items-center px-4 py-3 text-sm font-normal text-gray-300 hover:text-white hover:bg-gray-900 border-l-2 border-transparent hover:border-white transition-all rounded-none group"
+          >
+            <span className="group-hover:translate-x-1 transition-transform">Operational Monitor</span>
+          </Link>
+
+          <h3 className="text-[10px] font-bold text-gray-500 uppercase tracking-widest px-4 pt-10 mb-4">Network Management</h3>
           <Link 
             href="/admin/dashboard/users" 
             className="flex items-center px-4 py-3 text-sm font-normal text-gray-300 hover:text-white hover:bg-gray-900 border-l-2 border-transparent hover:border-white transition-all rounded-none group"
           >
-            <span className="group-hover:translate-x-1 transition-transform">Standard Users</span>
+            <span className="group-hover:translate-x-1 transition-transform">User Registry</span>
           </Link>
           <Link 
             href="/admin/dashboard/partners" 
             className="flex items-center px-4 py-3 text-sm font-normal text-gray-300 hover:text-white hover:bg-gray-900 border-l-2 border-transparent hover:border-white transition-all rounded-none group"
           >
-            <span className="group-hover:translate-x-1 transition-transform">Logistics Partners</span>
+            <span className="group-hover:translate-x-1 transition-transform">Partner Registry</span>
+          </Link>
+
+          <h3 className="text-[10px] font-bold text-gray-500 uppercase tracking-widest px-4 pt-10 mb-4">Financial & Safety</h3>
+          <Link 
+            href="/admin/dashboard/disputes" 
+            className="flex items-center px-4 py-3 text-sm font-normal text-gray-300 hover:text-white hover:bg-gray-900 border-l-2 border-transparent hover:border-white transition-all rounded-none group"
+          >
+            <span className="group-hover:translate-x-1 transition-transform">Dispute Resolution</span>
+          </Link>
+          <Link 
+            href="/admin/dashboard/payments" 
+            className="flex items-center px-4 py-3 text-sm font-normal text-gray-300 hover:text-white hover:bg-gray-900 border-l-2 border-transparent hover:border-white transition-all rounded-none group"
+          >
+            <span className="group-hover:translate-x-1 transition-transform">Financial Control</span>
           </Link>
         </nav>
 
