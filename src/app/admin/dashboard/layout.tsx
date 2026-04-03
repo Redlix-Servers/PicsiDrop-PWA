@@ -14,9 +14,9 @@ export default function AdminDashboardLayout({
         {/* Branding Area */}
         <div className="p-8 pb-10 border-b border-gray-800">
           <Link href="/admin/dashboard" className="flex items-center">
-            <span className="text-xl font-light tracking-tight text-white uppercase">
+            <span className="text-xl font-light tracking-tight text-white">
               Picsi<span className="font-semibold text-white ml-0.5">Drop</span>
-              <span className="ml-2 text-[9px] font-bold text-black bg-[#D2E32B] px-1.5 py-0.5 uppercase tracking-widest leading-none">
+              <span className="ml-2 text-[9px] font-medium text-black bg-[#D2E32B] px-1.5 py-0.5 leading-none">
                  Admin
               </span>
             </span>
@@ -25,7 +25,7 @@ export default function AdminDashboardLayout({
 
         {/* Primary Navigation */}
         <nav className="flex-1 px-4 py-8 space-y-2">
-          <h3 className="text-[10px] font-bold text-gray-500 uppercase tracking-widest px-4 mb-4">Admin Control</h3>
+          <h3 className="text-[10px] font-medium text-gray-500 tracking-widest px-4 mb-4">Admin Control</h3>
           
           <Link 
             href="/admin/dashboard" 
@@ -40,7 +40,7 @@ export default function AdminDashboardLayout({
             <span className="group-hover:translate-x-1 transition-transform">Watch Deliveries</span>
           </Link>
 
-          <h3 className="text-[10px] font-bold text-gray-500 uppercase tracking-widest px-4 pt-10 mb-4">Manage People</h3>
+          <h3 className="text-[10px] font-medium text-gray-500 tracking-widest px-4 pt-10 mb-4">Manage People</h3>
           <Link 
             href="/admin/dashboard/users" 
             className="flex items-center px-4 py-3 text-sm font-normal text-gray-300 hover:text-white hover:bg-gray-900 border-l-2 border-transparent hover:border-white transition-all group"
@@ -54,7 +54,7 @@ export default function AdminDashboardLayout({
             <span className="group-hover:translate-x-1 transition-transform">Driver List</span>
           </Link>
 
-          <h3 className="text-[10px] font-bold text-gray-500 uppercase tracking-widest px-4 pt-10 mb-4">Help & Money</h3>
+          <h3 className="text-[10px] font-medium text-gray-500 tracking-widest px-4 pt-10 mb-4">Help & Money</h3>
           <Link 
             href="/admin/dashboard/disputes" 
             className="flex items-center px-4 py-3 text-sm font-normal text-gray-300 hover:text-white hover:bg-gray-900 border-l-2 border-transparent hover:border-white transition-all group"
