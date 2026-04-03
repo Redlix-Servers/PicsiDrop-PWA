@@ -116,6 +116,21 @@ export async function completeParcelDelivery(parcelId: string) {
         console.error("Failed to complete delivery", err);
         return { error: "System error executing Escrow release." };
     }
+}export async function verifyDeliveryOTP(parcelId: string, submittedOTP: string) {
+    try {
+        const parcel = await prisma.parcel.findUnique({ where: { id: parcelId } });
+        
+        if (!parcel) return { error: "Parcel not found." };
+        if (parcel.deliveryOTP !== submittedOTP) return { error: "Invalid Delivery Authentication Code." };
+        
+        const updatedParcel = await prisma.parcel.update({
+            where: { id: parcelId },
+            data: { status: "Delivered" }
+        });
+        
+        return { success: true, parcel: updatedParcel };
+    } catch (err: any) {
+        console.error("Failed to verify delivery OTP", err);
+        return { error: "System error during delivery verification." };
+    }
 }
-
-

@@ -157,6 +157,20 @@ export async function handleAdminSignIn(formData: any) {
     console.error("Admin sign-in error:", error);
     return { error: error.message || "An error occurred during admin sign-in" };
   }
+}export async function handleUpdatePartnerRoute(email: string, routeFrom: string, routeTo: string, travelFrequency: string, travelTime: string) {
+  try {
+    const updatedPartner = await prisma.partner.update({
+      where: { email },
+      data: {
+        routeFrom,
+        routeTo,
+        travelFrequency,
+        travelTime,
+      },
+    });
+    return { success: true, partner: updatedPartner };
+  } catch (error: any) {
+    console.error("Update route error:", error);
+    return { error: error.message || "An error occurred while updating the route." };
+  }
 }
-
-
